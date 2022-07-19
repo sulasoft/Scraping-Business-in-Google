@@ -16,7 +16,7 @@ import pandas as pd
 from shutil import which
 
 try:
-	
+	chromedriver_autoinstaller.install()
 	options = webdriver.ChromeOptions()
 	options.add_argument('--headless')
 	options.add_argument('--log-level=3')
