@@ -18,15 +18,23 @@ from shutil import which
 try:
 	
 	options = webdriver.ChromeOptions()
-	options.add_argument("--headless")
+	options.add_argument('--headless')
 	options.add_argument('--log-level=3')
 	options.add_argument('--disable-dev-shm-usage')
 	options.add_argument('--start-maximized')
 	options.add_argument('--disable-blink-features=AutomationControlled')
 	lista = ['enable-automation', 'enable-logging']
 	options.add_experimental_option('excludeSwitches', lista)
+
+	
+
 	s = Service(which("chromedriver"))
-	driver = webdriver.Chrome(service=s, options=options)
+
+	
+
+	driver = webdriver.Chrome(executable_path = 'chromedriver', options=options)
+
+	
 
 	stealth(
 		driver,
@@ -37,6 +45,8 @@ try:
 		renderer = "Intel Iris OpenGL Engine",
 		fix_hairline=True,
 		)
+
+
 
 	# Create a request interceptor
 	def interceptor(request):
