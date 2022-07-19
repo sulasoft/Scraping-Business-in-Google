@@ -121,12 +121,16 @@ try:
 		
 		
 		business_websites = business_drive.find_elements(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[6]/div[2]/div/div[1]/a')
+		print(len(business_websites) + " primer")
 		if len(business_websites) == 0:
 			business_websites = business_drive.find_elements(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[7]/div[2]/div/div[1]/a')
+			print(len(business_websites) + " segundo")
 			if len(business_websites) == 0:
 				business_websites = business_drive.find_elements(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[5]/div[2]/div/div[1]/a')
+				print(len(business_websites) + " tercero")
 				if len(business_websites) == 0:
 					business_websites = business_drive.find_elements(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[4]/div[2]/div/div[1]/a')
+					print(len(business_websites) + " cuarto")
 					if len(business_websites) == 0:
 						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[8]/div[2]/div/div[1]/a').get_attribute("href")
 					else:
