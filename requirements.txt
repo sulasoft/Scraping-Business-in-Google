@@ -1,0 +1,8 @@
+beautifulsoup4==4.11.1
+chromedriver_autoinstaller==0.3.1
+pandas==1.4.3
+pandas_stubs==1.2.0.53
+requests==2.26.0
+selenium==4.3.0
+selenium_stealth==1.0.6
+selenium_wire==4.6.4
