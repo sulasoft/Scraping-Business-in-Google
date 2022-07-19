@@ -17,8 +17,10 @@ import pandas as pd
 try:
 	chromedriver_autoinstaller.install()
 	options = webdriver.ChromeOptions()
-	# options.add_argument("--headless")
+	options.add_argument("--headless")
 	options.add_argument('--log-level=3')
+	options.add_argument('--disable-dev-shm-usage')
+	options.add_argument('--start-maximized')
 	options.add_argument('--disable-blink-features=AutomationControlled')
 	lista = ['enable-automation', 'enable-logging']
 	options.add_experimental_option('excludeSwitches', lista)
@@ -49,8 +51,6 @@ try:
 	sleep(20)
 	# Looking for more business
 	div_mother = driver.find_element(By.XPATH, '/html/body/div[3]/div[9]/div[9]/div/div/div[1]/div[2]/div/div[1]/div/div/div[2]')
-
-	driver.maximize_window()
 
 	print("1")
 
