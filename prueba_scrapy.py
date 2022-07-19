@@ -59,7 +59,7 @@ try:
 	url = "https://www.google.com/maps/search/" + str(keyword)
 
 	driver.get(url)
-	
+	sleep(5)
 	# Looking for more business
 	div_mother = driver.find_element(By.XPATH, '/html/body/div[3]/div[9]/div[9]/div/div/div[1]/div[2]/div/div[1]/div/div/div[2]')
 
@@ -84,6 +84,7 @@ try:
 	for business in business_total:
 
 		business.click()
+		sleep(5)
 		
 		business_drive = driver.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]')
 
@@ -139,6 +140,7 @@ try:
 		
 		req = requests.get(business_websites, headers=headers, timeout=10)
 		
+		sleep(5)
 
 		soup = BeautifulSoup(req.text, "html.parser")
 											
@@ -165,6 +167,7 @@ try:
 
 			req = requests.get(business_websites, headers=headers, timeout=10)
 
+			sleep(5)
 
 			soup = BeautifulSoup(req.text, "html.parser")
 													
