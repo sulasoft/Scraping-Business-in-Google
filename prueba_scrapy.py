@@ -12,10 +12,10 @@ import chromedriver_autoinstaller
 import webbrowser
 import re
 import pandas as pd
-
+from shutil import which
 
 try:
-	chromedriver_autoinstaller.install()
+	
 	options = webdriver.ChromeOptions()
 	options.add_argument("--headless")
 	options.add_argument('--log-level=3')
@@ -24,8 +24,8 @@ try:
 	options.add_argument('--disable-blink-features=AutomationControlled')
 	lista = ['enable-automation', 'enable-logging']
 	options.add_experimental_option('excludeSwitches', lista)
-
-	driver = webdriver.Chrome(executable_path = 'chromedriver',options=options)
+	s = Service(which("chromedriver"))
+	driver = webdriver.Chrome(service=s, options=options)
 
 	stealth(
 		driver,
