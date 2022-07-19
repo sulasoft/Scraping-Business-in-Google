@@ -20,6 +20,7 @@ try:
 	options = webdriver.ChromeOptions()
 	options.add_argument('--headless')
 	options.add_argument('--log-level=3')
+	options.add_argument('--window-size=1920,1080')
 	options.add_argument('--disable-dev-shm-usage')
 	options.add_argument('--start-maximized')
 	options.add_argument('--disable-blink-features=AutomationControlled')
@@ -84,7 +85,7 @@ try:
 	for business in business_total:
 
 		business.click()
-		sleep(5)
+		sleep(15)
 		
 		business_drive = driver.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]')
 
