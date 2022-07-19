@@ -1,0 +1,1 @@
+web: python prueba_scrapy.py
