@@ -128,38 +128,53 @@ try:
 		try:
 			print("Primer intento")                                    
 			business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[4]/div[2]/div/div[1]/a')
-			if "http" in business_websites.get_attribute("href"):
-				business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[4]/div[2]/div/div[1]/a').get_attribute("href")
+			if "places" in business_websites.get_attribute("href"):
+				business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/sadsadsad').get_attribute("href")
+			else:
+				if "http" in business_websites.get_attribute("href"):
+					business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[4]/div[2]/div/div[1]/a').get_attribute("href")
 		except:
 			try:
 				print("Segundo intento")
 				business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[5]/div[2]/div/div[1]/a')
-				if "http" in business_websites.get_attribute("href"):
-					business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[5]/div[2]/div/div[1]/a').get_attribute("href")
+				if "places" in business_websites.get_attribute("href"):
+					business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/sdasdsad').get_attribute("href")
+				else:
+					if "http" in business_websites.get_attribute("href"):
+						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[5]/div[2]/div/div[1]/a').get_attribute("href")
 			except:
 				try:
 					print("Error...")
 					print("Tercer intento")
 					business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[6]/div[2]/div/div[1]/a')
-					if "http" in business_websites.get_attribute("href"):
-						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[6]/div[2]/div/div[1]/a').get_attribute("href")
+					if "places" in business_websites.get_attribute("href"):
+						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/asdsadsad').get_attribute("href")
+					else:
+						if "http" in business_websites.get_attribute("href"):
+							business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[6]/div[2]/div/div[1]/a').get_attribute("href")
 				except:
 					try:
 						print("Error...")
 						print("Cuarto intento")                                           
 						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[7]/div[2]/div/div[1]/a')
-						if "http" in business_websites.get_attribute("href"):
-							business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[7]/div[2]/div/div[1]/a').get_attribute("href")
+						if "places" in business_websites.get_attribute("href"):
+							business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/asdasdasdsad').get_attribute("href")
+						else:
+							if "http" in business_websites.get_attribute("href"):
+								business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[7]/div[2]/div/div[1]/a').get_attribute("href")
 					except:
 						try:
 							print("Error...")
 							print("Quinto intento")
 							business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[8]/div[2]/div/div[1]/a')
-							if "http" in business_websites.get_attribute("href"):
-								business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[8]/div[2]/div/div[1]/a').get_attribute("href")
+							if "places" in business_websites.get_attribute("href"):
+								business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/adsadasdasd').get_attribute("href")
+							else:
+								if "http" in business_websites.get_attribute("href"):
+									business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[8]/div[2]/div/div[1]/a').get_attribute("href")
 						except Exception as e:
 							print("Error..." + str(e))	
-													   
+
 	#	if len(business_websites) == 0:
 	#		business_websites = driver.find_element(By.CLASS_NAME, ' wV5uyc')
 	#		business_websites = business.find_element(By.CLASS_NAME, 'VfPpkd-dgl2Hf-ppHlrf-sM5MNb').get_attribute("href")
