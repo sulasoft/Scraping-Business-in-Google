@@ -97,6 +97,8 @@ try:
 		if business_title in list_business:
 			business_title = business_title + " B" 
 
+		print(business_title)
+
 		business_titles.append(business_title)
 
 		list_business["Name"] = business_titles
@@ -117,6 +119,8 @@ try:
 
 		business_addresses.append(business_address)
 
+		print(business_address)
+		
 		list_business["Address"] = business_addresses 
 		
 		
