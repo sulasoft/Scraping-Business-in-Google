@@ -18,7 +18,7 @@ from shutil import which
 try:
 	chromedriver_autoinstaller.install()
 	options = webdriver.ChromeOptions()
-	options.add_argument('--headless')
+	# options.add_argument('--headless')
 	options.add_argument('--log-level=3')
 	options.add_argument('--window-size=1920,1080')
 	options.add_argument('--disable-dev-shm-usage')
@@ -27,11 +27,7 @@ try:
 	lista = ['enable-automation', 'enable-logging']
 	options.add_experimental_option('excludeSwitches', lista)
 
-	
-
 	s = Service(which("chromedriver"))
-
-	
 
 	driver = webdriver.Chrome(executable_path = 'chromedriver', options=options)
 
@@ -63,11 +59,22 @@ try:
 	sleep(5)
 	# Looking for more business
 	div_mother = driver.find_element(By.XPATH, '/html/body/div[3]/div[9]/div[9]/div/div/div[1]/div[2]/div/div[1]/div/div/div[2]')
+	scroll = div_mother.find_elements(By.CLASS_NAME, 'hfpxzc')
+	scroll[0].click()
+	for j in range(4):
+		for i in range(200):
+			scroll[0].send_keys(Keys.DOWN)
+		sleep(2)
+		
+
+	div_mother = driver.find_element(By.XPATH, '/html/body/div[3]/div[9]/div[9]/div/div/div[1]/div[2]/div/div[1]/div/div/div[2]')
+	sleep(10)
 
 	print("1")
 
 	business_total = div_mother.find_elements(By.CLASS_NAME, 'hfpxzc')
 
+	print(str(len(business_total)) + ' Encontrados')
 	print("2")
 
 	# business_websites = driver.find_elements(By.CLASS_NAME, 'yYlJEf.Q7PwXb.L48Cpd')
@@ -130,9 +137,12 @@ try:
 			business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[4]/div[2]/div/div[1]/a')
 			if "places" in business_websites.get_attribute("href"):
 				business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/sadsadsad').get_attribute("href")
-			else:
-				if "http" in business_websites.get_attribute("href"):
-					business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[4]/div[2]/div/div[1]/a').get_attribute("href")
+			else: 
+				if "msgsndr.com" in business_websites.get_attribute("href"):
+					business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/sadsadsad').get_attribute("href")
+				else:
+					if "http" in business_websites.get_attribute("href"):
+						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[4]/div[2]/div/div[1]/a').get_attribute("href")
 		except:
 			try:
 				print("Segundo intento")
@@ -140,8 +150,11 @@ try:
 				if "places" in business_websites.get_attribute("href"):
 					business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/sdasdsad').get_attribute("href")
 				else:
-					if "http" in business_websites.get_attribute("href"):
-						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[5]/div[2]/div/div[1]/a').get_attribute("href")
+					if "msgsndr.com" in business_websites.get_attribute("href"):
+						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/sadsadsad').get_attribute("href")
+					else:
+						if "http" in business_websites.get_attribute("href"):
+							business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[5]/div[2]/div/div[1]/a').get_attribute("href")
 			except:
 				try:
 					print("Error...")
@@ -150,8 +163,11 @@ try:
 					if "places" in business_websites.get_attribute("href"):
 						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/asdsadsad').get_attribute("href")
 					else:
-						if "http" in business_websites.get_attribute("href"):
-							business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[6]/div[2]/div/div[1]/a').get_attribute("href")
+						if "msgsndr.com" in business_websites.get_attribute("href"):
+							business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/sadsadsad').get_attribute("href")
+						else:
+							if "http" in business_websites.get_attribute("href"):
+								business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[6]/div[2]/div/div[1]/a').get_attribute("href")
 				except:
 					try:
 						print("Error...")
@@ -160,8 +176,11 @@ try:
 						if "places" in business_websites.get_attribute("href"):
 							business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/asdasdasdsad').get_attribute("href")
 						else:
-							if "http" in business_websites.get_attribute("href"):
-								business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[7]/div[2]/div/div[1]/a').get_attribute("href")
+							if "msgsndr.com" in business_websites.get_attribute("href"):
+								business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/sadsadsad').get_attribute("href")
+							else:
+								if "http" in business_websites.get_attribute("href"):
+									business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[7]/div[2]/div/div[1]/a').get_attribute("href")
 					except:
 						try:
 							print("Error...")
@@ -170,8 +189,11 @@ try:
 							if "places" in business_websites.get_attribute("href"):
 								business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/adsadasdasd').get_attribute("href")
 							else:
-								if "http" in business_websites.get_attribute("href"):
-									business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[8]/div[2]/div/div[1]/a').get_attribute("href")
+								if "msgsndr.com" in business_websites.get_attribute("href"):
+									business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/sadsadsad').get_attribute("href")
+								else:
+									if "http" in business_websites.get_attribute("href"):
+										business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[8]/div[2]/div/div[1]/a').get_attribute("href")
 						except Exception as e:
 							print("Error...." + str(e))	
 
