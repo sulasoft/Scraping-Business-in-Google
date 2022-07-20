@@ -61,8 +61,8 @@ try:
 	div_mother = driver.find_element(By.XPATH, '/html/body/div[3]/div[9]/div[9]/div/div/div[1]/div[2]/div/div[1]/div/div/div[2]')
 	scroll = div_mother.find_elements(By.CLASS_NAME, 'hfpxzc')
 	scroll[0].click()
-	for j in range(4):
-		for i in range(200):
+	for j in range(10):
+		for i in range(100):
 			scroll[0].send_keys(Keys.DOWN)
 		sleep(2)
 		
