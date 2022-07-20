@@ -120,31 +120,23 @@ try:
 		business_addresses.append(business_address)
 
 		print(business_address)
-		
+
 		list_business["Address"] = business_addresses 
 		
-		
-		business_websites = business_drive.find_elements(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[6]/div[2]/div/div[1]/a')
-		print(str(len(business_websites)) + " primer")
-		if len(business_websites) == 0:
-			business_websites = business_drive.find_elements(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[7]/div[2]/div/div[1]/a')
-			print(str(len(business_websites)) + " segundo")
-			if len(business_websites) == 0:
-				business_websites = business_drive.find_elements(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[5]/div[2]/div/div[1]/a')
-				print(str(len(business_websites)) + " tercero")
-				if len(business_websites) == 0:
-					business_websites = business_drive.find_elements(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[4]/div[2]/div/div[1]/a')
-					print(str(len(business_websites)) + " cuarto")
-					if len(business_websites) == 0:
-						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[8]/div[2]/div/div[1]/a').get_attribute("href")
-					else:
-						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[4]/div[2]/div/div[1]/a').get_attribute("href")
-				else:
+																	
+		try:
+			business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[8]/div[2]/div/div[1]/a').get_attribute("href")
+		except:
+			try:
+				business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[4]/div[2]/div/div[1]/a').get_attribute("href")
+			except:
+				try:
 					business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[5]/div[2]/div/div[1]/a').get_attribute("href")
-			else:                                                        
-				business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[7]/div[2]/div/div[1]/a').get_attribute("href")
-		else:
-			business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[6]/div[2]/div/div[1]/a').get_attribute("href")
+		        except:
+		        	try:                                           
+						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[7]/div[2]/div/div[1]/a').get_attribute("href")
+					except:
+						business_websites = business_drive.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[3]/div/div[1]/div/div/div[2]/div[7]/div[6]/div[2]/div/div[1]/a').get_attribute("href")
 																   
 	#	if len(business_websites) == 0:
 	#		business_websites = driver.find_element(By.CLASS_NAME, ' wV5uyc')
